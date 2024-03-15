@@ -1,4 +1,4 @@
-package cfacme
+package acme
 
 import (
 	"errors"
@@ -27,6 +27,9 @@ type CertMan struct {
 	refreshInterval time.Duration
 }
 
+// SetRefreshInterval can be used to set how much time before expiration for automatic updates to happen.
+// e.g., 30 days before expiration
+// after each refres, the next refresh will be scheduled
 func (cm *CertMan) SetRefreshInterval(d time.Duration) {
 	cm.refreshInterval = d
 }
